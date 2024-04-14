@@ -17,6 +17,13 @@ const Start = ({ navigation }) => {
     navigation.navigate("Chat", { name: name, background: background });
   };
 
+  const colors = {
+    black: "#090C08",
+    magenta: "#474056",
+    blue: "#8A95A5",
+    green: "#B9C6AE",
+  };
+
   return (
     <ImageBackground
       source={require("../img/BackgroundImage.png")}
@@ -39,35 +46,35 @@ const Start = ({ navigation }) => {
             <TouchableOpacity
               style={[
                 styles.chooseColor,
-                { backgroundColor: "#090C08" },
-                background === "#090C08" && styles.selectedColor,
+                { backgroundColor: colors.black },
+                background === colors.black && styles.selectedColor,
               ]}
               // Set the function to handle button press
-              onPress={() => setBackground("#090C08")}
+              onPress={() => setBackground(colors.black)}
             ></TouchableOpacity>
             <TouchableOpacity
               style={[
                 styles.chooseColor,
-                { backgroundColor: "#474056" },
-                background === "#474056" && styles.selectedColor,
+                { backgroundColor: colors.magenta },
+                background === colors.magenta && styles.selectedColor,
               ]}
-              onPress={() => setBackground("#474056")}
+              onPress={() => setBackground(colors.magenta)}
             ></TouchableOpacity>
             <TouchableOpacity
               style={[
                 styles.chooseColor,
-                { backgroundColor: "#8A95A5" },
-                background === "#8A95A5" && styles.selectedColor,
+                { backgroundColor: colors.blue },
+                background === colors.blue && styles.selectedColor,
               ]}
-              onPress={() => setBackground("#8A95A5")}
+              onPress={() => setBackground(colors.blue)}
             ></TouchableOpacity>
             <TouchableOpacity
               style={[
                 styles.chooseColor,
-                { backgroundColor: "#B9C6AE" },
-                background === "#B9C6AE" && styles.selectedColor,
+                { backgroundColor: colors.green },
+                background === colors.green && styles.selectedColor,
               ]}
-              onPress={() => setBackground("#B9C6AE")}
+              onPress={() => setBackground(colors.green)}
             ></TouchableOpacity>
           </View>
         </View>
