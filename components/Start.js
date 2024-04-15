@@ -7,6 +7,8 @@ import {
   TextInput,
   ImageBackground,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 
 const Start = ({ navigation }) => {
@@ -44,6 +46,10 @@ const Start = ({ navigation }) => {
           <View style={styles.colorButtonsContainer}>
             {/* Render a TouchableOpacity for each color option */}
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Color options"
+              accessibilityHint="Lets you set your chat background color to black."
+              accessibilityRole="button"
               style={[
                 styles.chooseColor,
                 { backgroundColor: colors.black },
