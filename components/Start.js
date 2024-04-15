@@ -49,7 +49,7 @@ const Start = ({ navigation }) => {
               accessible={true}
               accessibilityLabel="Color options"
               accessibilityHint="Lets you set your chat background color to black."
-              accessibilityRole="button"
+              accessibilityRole="Color button"
               style={[
                 styles.chooseColor,
                 { backgroundColor: colors.black },
@@ -59,6 +59,10 @@ const Start = ({ navigation }) => {
               onPress={() => setBackground(colors.black)}
             ></TouchableOpacity>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Color options"
+              accessibilityHint="Lets you set your chat background color to magenta."
+              accessibilityRole="Color button"
               style={[
                 styles.chooseColor,
                 { backgroundColor: colors.magenta },
@@ -67,6 +71,10 @@ const Start = ({ navigation }) => {
               onPress={() => setBackground(colors.magenta)}
             ></TouchableOpacity>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Color options"
+              accessibilityHint="Lets you set your chat background color to blue."
+              accessibilityRole="Color button"
               style={[
                 styles.chooseColor,
                 { backgroundColor: colors.blue },
@@ -75,6 +83,10 @@ const Start = ({ navigation }) => {
               onPress={() => setBackground(colors.blue)}
             ></TouchableOpacity>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Color options"
+              accessibilityHint="Lets you set your chat background color to green."
+              accessibilityRole="Color button"
               style={[
                 styles.chooseColor,
                 { backgroundColor: colors.green },
@@ -88,6 +100,9 @@ const Start = ({ navigation }) => {
           <Text style={styles.textButton}>Start Chatting</Text>
         </TouchableOpacity>
       </View>
+      {Platform.OS === "ios" ? (
+        <KeyboardAvoidingView behavior="padding" />
+      ) : null}
     </ImageBackground>
   );
 };
