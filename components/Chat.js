@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 
 const Chat = ({ route, navigation, db }) => {
-  const { name, background, id } = route.params;
+  const { name, background, userID } = route.params;
   const [messages, setMessages] = useState([]);
 
   // Messages database
@@ -19,9 +19,9 @@ const Chat = ({ route, navigation, db }) => {
   useEffect(() => {
     navigation.setOptions({ title: name });
     const q = query(collection(db, "messages"), orderBy("createdAt", "desc"));
-    const unsubMessages = onSnapshot(q, (docs) => {
+    const unsubMessages = onSnapshot(q, (documentsSnapshot) => {
       let newMessages = [];
-      docs.forEach((doc) => {
+      documentsSnapshot.forEach((doc) => {
         newMessages.push({
           id: doc.id,
           ...doc.data(),
@@ -38,11 +38,6 @@ const Chat = ({ route, navigation, db }) => {
   const onSend = (newMessages) => {
     addDoc(collection(db, "messages"), newMessages[0]);
   };
-
-  // set users name
-  useEffect(() => {
-    navigation.setOptions({ title: name });
-  }, []);
 
   const renderBubble = (props) => {
     return (
@@ -68,7 +63,7 @@ const Chat = ({ route, navigation, db }) => {
         renderBubble={renderBubble}
         onSend={(messages) => onSend(messages)}
         user={{
-          _id: id,
+          _id: userID,
           name,
         }}
       />
