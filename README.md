@@ -91,4 +91,4 @@ npm start
 
 ### Screenshots of the project
 
-<img src="https://github.com/melvinshook/hello-world/blob/master/img/IMG_7086.png"  width="300">
+<img src="../img/IMG_7086.png"  width="300">
