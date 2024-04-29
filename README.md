@@ -91,4 +91,4 @@ npm start
 
 ### Screenshots of the project
 
-![] (img/IMG_7087.png)
+![](img/IMG_7087.png)
