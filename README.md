@@ -91,5 +91,5 @@ npm start
 
 ### Screenshots of the project
 
-<img src="img/IMG_7087.png" height="300"> 
-<img src="img/IMG_7086.png" width="300">
+<img src="img/IMG_7087.png" height="500"> 
+<img src="img/IMG_7086.png" height="500">
